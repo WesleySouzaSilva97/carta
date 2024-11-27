@@ -27,19 +27,31 @@ function sortear() {
     // a linha abaixo adciona a div identificada como 'supEsq' a face eo nipe sorteado e também tags <div> adicionais
     document.getElementById('supEsq').innerHTML = `<div>${faceSorteada}</div> <div>${nipeSorteado}</div>`
     // a linha abaixo  muda o css ref a tag identificada
-    document.getElementById('supEsq').style.color = cor 
+    document.getElementById('supEsq').style.color = cor
 
     // rendenrizar o centro da carta 
-
+    // Renderizar o centro da carta
     let cc = document.getElementById('centroCarta')
-    cc.innerHTML = `${nipeSorteado}`
-    document.getElementById('centroCarta').style.color = cor 
+    if (faceSorteada === 'J') {
+        cc.innerHTML = `<img src="./img/valete.png">`
+    } else if (faceSorteada === 'Q') {
+        cc.innerHTML = `<img src="./img/dama.png">`
+    } else if (faceSorteada === 'K') {
+        cc.innerHTML = `<img src="./img/rei.png">`
+    } else {
+        cc.innerHTML = `${nipeSorteado}`
+        // A linha abaixo muda o CSS referente a tag identificada
+        document.getElementById('centroCarta').style.color = cor
+    }
+
+
+
 
 
     // renderizar o canto inferior direito da carta
     // a linha abaixo adciona a div identificada como 'infDir' a face eo nipe sorteado e também tags <div> adicionais
     document.getElementById('infDir').innerHTML = `<div>${faceSorteada}</div> <div>${nipeSorteado}</div>`
-    document.getElementById('infDir').style.color = cor 
+    document.getElementById('infDir').style.color = cor
 
 }
 
